@@ -3,11 +3,13 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
-driver.get("http://www.plusvalia.com")
-search_box = driver.find_element(by=By.CSS_SELECTOR, value="#react-filters-form > form > div > div.search-box-container > div > div > ul > div > input")
+driver.get("https://ecuador.patiotuerca.com/")
+search_box = driver.find_element(by=By.CSS_SELECTOR, value="search-list")
 search_box.send_keys("Manta")
 
-search_button = driver.find_element(by=By.CSS_SELECTOR, value="#react-filters-form > form > div > div.sc-fPXMVe.kmIKmV > button")
+search_button = driver.find_element(by=By.CSS_SELECTOR, value="openSearch > div > div > div.search-ots.false > ing")
 search_button.click()
+
+vehicle_card = driver.find_elements(By.CSS_SELECTOR, "#featuredUsed > div")
 
 driver.close()
